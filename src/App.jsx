@@ -9,6 +9,7 @@ export default function App() {
     // update value accordingly - if called by AddButton
     function add (value) {
         setCount (count + value);
+        console.log(count);
     }
 
     // display counter and call AddButton function
