@@ -3,7 +3,7 @@ import './App.css'
 export default function AddButton({myInc, myCallback}) {
 
     // call defined function and pass value to increment variable
-    function handleClick(){
+    const handleClick = () => {
         myCallback(myInc);
     }
 

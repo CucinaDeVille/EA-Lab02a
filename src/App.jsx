@@ -7,7 +7,7 @@ export default function App() {
     const [count, setCount] = useState(0);
 
     // update value accordingly - if called by AddButton
-    function add (value) {
+    const add = (value) => {
         setCount (count + value);
         console.log(count);
     }
@@ -17,7 +17,7 @@ export default function App() {
     return (
         <div className="App">
             <p>Count: {count}</p>
-            <AddButton myInc={ 3 } myCallback = { add }/>
+            <AddButton myInc={ 11 } myCallback = { add }/>
         </div>
     );
 }
