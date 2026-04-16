@@ -1,19 +1,12 @@
-import './App.css'
-import {useState} from "react";
+//import {useState} from "react";
+import AddButton from "./AddButton.jsx";
 
 export default function App() {
 
-    const [count, setCount] = useState(0);
-
-    function doClick (){
-        setCount(count + 1);
-        console.log(count);
-    }
-
   return (
     <div className="App">
-        <p>Count: {count}</p>
-        <button className="myButton" onClick={doClick}>increment</button>
+        <p>Count: 0</p>
+        <AddButton myInc="5"/>
     </div>
   );
 }
