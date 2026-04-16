@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div className="App">
         <p>Count: {count}</p>
-        <button onClick={doClick}>increment</button>
+        <button className="myButton" onClick={doClick}>increment</button>
     </div>
   );
 }
