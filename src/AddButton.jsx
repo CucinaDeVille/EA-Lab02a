@@ -1,9 +1,9 @@
 import './App.css'
 
-export default function AddButton({myInc}) {
+export default function AddButton({myInc, myCallback}) {
 
     function handleClick(){
-        alert(myInc)
+        myCallback(myInc);
     }
 
     return (
