@@ -3,32 +3,29 @@ import AddButton from "./AddButton.jsx";
 
 export default function App() {
 
-    // hold current value of variable
+    // available values for buttons
+    const values = [1, 10, 100, 1000, 10000];
+
+    // hold current state of timeInSec
     const [timeInSec, setTimeInSec] = useState(0);
 
-    // update value accordingly - if called by AddButton
-    const add = (value) => {
-        setTimeInSec (timeInSec + value);
-        console.log(timeInSec);
-    }
-
+    // transfer seconds into alternative format
     let hour = Math.floor(timeInSec / 3600);
     let minute = Math.floor((timeInSec % 3600) / 60);
     let second = Math.floor(timeInSec % 60);
 
-    // display counter and call AddButton function
-    // pass along increment steps and REFERENCE (!!!) to callback function
-    return (
-        <div className="App">
-            <p>Seconds: {timeInSec}</p>
+    // update timeInSec accordingly - if called by component AddButton
+    function handleClick(value){
+        setTimeInSec(i => i + value);
+    }
 
-            <AddButton myInc={ 1 } myCallback = { add }/>
-            <AddButton myInc={ 10 } myCallback = { add }/>
-            <AddButton myInc={ 100 } myCallback = { add }/>
-            <AddButton myInc={ 1000 } myCallback = { add }/>
-            <AddButton myInc={ 10000 } myCallback = { add }/>
-
-            <p>{hour}h {minute}m {second}s</p>
+    // display counter and button component
+    // pass along values for buttons and REFERENCE (!!!) to callback function
+    return(
+        <div>
+            <p>Count: {timeInSec}</p>
+            <AddButton values={values} callBack={handleClick}/>
+            <p>{hour}h {minute}min {second}sec</p>
         </div>
     );
 }
